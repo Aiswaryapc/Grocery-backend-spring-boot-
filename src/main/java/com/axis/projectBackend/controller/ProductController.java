@@ -29,7 +29,19 @@ public class ProductController {
     @Autowired
     private AuthenticationService authenticationService;
     
-    // list all the products
+    public ProductController() {
+		super();
+	}
+
+	public ProductService getProductService() {
+		return productService;
+	}
+
+	public void setProductService(ProductService productService) {
+		this.productService = productService;
+	}
+
+	// list all the products
     @GetMapping("/")
     public ResponseEntity<List<Product>> getProducts() {
         List<Product> product = productService.listProducts();

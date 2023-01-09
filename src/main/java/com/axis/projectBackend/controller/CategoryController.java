@@ -34,6 +34,28 @@ public class CategoryController {
 	@Autowired
     private AuthenticationService authenticationService;
 	
+	
+	
+	public CategoryController() {
+		super();
+	}
+
+	public CategoryService getCategoryService() {
+		return categoryService;
+	}
+
+	public void setCategoryService(CategoryService categoryService) {
+		this.categoryService = categoryService;
+	}
+
+	public AuthenticationService getAuthenticationService() {
+		return authenticationService;
+	}
+
+	public void setAuthenticationService(AuthenticationService authenticationService) {
+		this.authenticationService = authenticationService;
+	}
+
 	@GetMapping("/")
     public ResponseEntity<List<Category>> getCategories() {
         List<Category> body = categoryService.listCategories();
